@@ -12,10 +12,8 @@ const Form = () => {
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const value = parseInt(e.target.value.replace(/,/g, ''));
-        if (!isNaN(value)) {
-            const formattedValue = value.toLocaleString('en-US');
-            setValue('pay', formattedValue);
-        }
+        const formattedValue = value.toLocaleString();
+        setValue('pay', formattedValue);
     };
 
     const handleKeyDown = (e: KeyboardEvent<HTMLElement>) => {
