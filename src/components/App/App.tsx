@@ -1,9 +1,5 @@
-const App = () => {
-  return (
-    <div className="App">
-      
-    </div>
-  );
-}
+import { LoginForm } from "../LoginForm";
+
+const App = () => <div className="App"><LoginForm/></div>
 
 export default App;
