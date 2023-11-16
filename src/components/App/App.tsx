@@ -1,5 +1,5 @@
-import { Form } from "../Form";
+import { LoginForm } from "../LoginForm";
 
-const App = () => <div className="App"><Form></Form></div>
+const App = () => <div className="App"><LoginForm/></div>
 
 export default App;

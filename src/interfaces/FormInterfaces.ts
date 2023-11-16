@@ -1,5 +1,5 @@
 export interface IFormData {
-    pay: string,
+    amount: string,
     email: string,
     password: string,
     confirmPassword: string,

@@ -7,13 +7,13 @@ import { CustomTextField } from "./styled";
 import { theme } from "../../theme/theme"
 import { validateEmail, validatePassword } from "../../utils/validate";
 
-const Form = () => {
+const LoginForm = () => {
     const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<IFormData>();
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const value = parseInt(e.target.value.replace(/,/g, ''));
         const formattedValue = value.toLocaleString();
-        setValue('pay', formattedValue);
+        setValue('amount', formattedValue);
     };
 
     const handleKeyDown = (e: KeyboardEvent<HTMLElement>) => {
@@ -25,7 +25,7 @@ const Form = () => {
     const onSubmit: SubmitHandler<IFormData> = () => alert(`Data submitted`);
 
     return (
-        <Box m={"70px"} display={'flex'} justifyContent={'center'} alignItems={'center'} gap={'5px'}>
+        <Box m={"70px"} display='flex' justifyContent='center' alignItems='center' gap='5px'>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <FormControl onSubmit={handleSubmit(onSubmit)}>
                     <ThemeProvider theme={theme}>
@@ -37,7 +37,7 @@ const Form = () => {
                             InputProps={{
                                 endAdornment: <InputAdornment position="end">$</InputAdornment>,
                             }}
-                            {...register("pay")}
+                            {...register("amount")}
                             onKeyDown={handleKeyDown}
                             onChange={handleChange}
                         />
@@ -84,11 +84,11 @@ const Form = () => {
                     </Button>
                 </FormControl>
             </form>
-            <Box width={'120px'}>
+            <Box width='120px'>
                 {errors && <div>{errors.email?.message || errors.password?.message || errors.confirmPassword?.message}</div>}
             </Box>
         </Box>
     );
 }
 
-export default Form;
+export default LoginForm;
